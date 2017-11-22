@@ -15,7 +15,7 @@ public class TestHabilitarUsuario {
 		assertTrue(true);
 	}
 	
-	/*
+	
 
 	@Test
 	public void deshabilitarUsuario() {
@@ -36,5 +36,5 @@ public class TestHabilitarUsuario {
 		assertTrue(usuariodao.buscarCodigoUsuario(codigo).getEstado()==10);
 		assertTrue(true);
 	}
-*/
+
 }
