@@ -1,0 +1,285 @@
+.bodycolor{
+	background-color: #A36263; 
+	color:#f2e3e6
+	}
+.header{
+	width: 70%;
+	margin-left: 15%; 
+	height: auto;
+	/*float:left;*/ 
+	}
+.marco{ 
+	background-color:  #733742;
+	color:#f2e3e6
+	}
+.banner{ 
+	background-color: #733742;
+	color: #733742;
+	}
+#label-font{
+	color:#6973a5 !important;
+	font-weight: bold;
+}
+#label-font-pas{
+	color:#ffffff !important;
+	font-weight: bold;
+}
+#control-font{
+	color:#733742 !important;
+}
+
+#marcologin, #adopcion-cont{
+	
+	margin: 75px 0px;
+	}
+	
+.bannerMensaje{
+	background-color: #f2e3e6;
+	margin-top: 2em;
+	padding: 1em 2em 2em 2em;
+	border-radius: 2%;
+	color:#733742;
+	}
+.navbar-nav{
+	margin: 15px -10px;
+	}
+div#principal_menu{
+	width: 582px;
+	margin: auto;
+	background-color: #47a596;/*#333333;*/
+	color:#f2e3e6;
+	}
+div#admin_menu{
+	width: 678px;
+	margin: auto;
+	background-color:  #47a596; /*#333333;*/
+	color:#f2e3e6;
+	}
+#menu{
+	/*width: 850px;*/
+	margin: auto;
+	background-color: #47a596; 
+	 /* #333333 */ 
+	}
+.style-login{
+	background-color: #A36263;
+	width: 500px;
+	margin: auto;
+	margin-top: 2em;
+	padding: 1em 2em 2em 2em;
+	border-radius: 2%;}
+#list-login > li{
+	margin-bottom: 1em;}
+#list-login input#username, #password{
+	width: 16em;
+	margin: auto;}
+a{
+	color:#f2e3e6 !important;
+}
+a:hover{
+	background-color: #ff7560  !important;
+}
+.img-detail{
+	width: 100%;
+	height: 210px !important;
+}
+#body-content{
+	margin-top: 3em;
+}
+.form-group{
+	margin-right: 15px !important;
+}
+button.btn.btn-primary.btn-lg.btn-block.login-button{
+	width: 50%;
+	margin: auto;
+	margin-bottom: -18px;
+}
+button.btn.btn-primary.btn-lg.btn-block.btn1{
+	width: 50%;
+	margin: auto;
+}
+
+#banner
+{
+	width:945px;
+}
+
+.baner
+{
+	height:490px;
+		
+
+}
+
+footer
+{
+    height: 170px;  
+    background-image: url("../img/BorderCollie.jpg");
+    background-position: center;
+    background-repeat: y;
+    background-color: #47a596; /*#733742;*/
+    font-size: 1em;
+    font-weight: bold;
+     background-blend-mode:color-dodge;
+     color: #A36263;/*#ff7560;*/
+    
+}
+
+footer a:hover
+{
+	background-color: rgba(255,255,255,0.0) !important;
+}
+
+
+footer span img
+{
+    height: 45px; !important
+}
+
+#fcontent
+{
+	padding-top: 45px;
+}
+
+#social
+{
+	margin-left: 600px;
+}
+
+#social img
+{
+	margin-top: 7px;
+	/*margin-right: 55px;*/
+}
+
+#stext 
+{
+	margin-left: 55px;
+	/*margin-right: 55px;*/
+}
+
+@font-face {
+    font-family: "My Custom Font";
+    src: url('fonts/SettaScript.ttf') format("truetype");
+}
+
+#titulo
+{
+	font-size: 150px; !important;
+	font-family: "My Custom Font", Verdana, Tahoma; !important;
+	font-weight: bold;
+	color: #ff7560;
+	margin-left: 40px;
+	text-shadow: 2px 2px #ff0000;
+		
+}
+
+.ingreso
+{
+	margin-top: 35px;
+}
+
+#logo
+{
+	margin-top: 7px;
+}
+
+#cr
+{	
+	margin-top: 30px;
+	margin-right: 450px;
+	font-size: 11px;
+}
+
+#cabecera
+{
+	background-image: url("../img/banner2.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: color-dodge;
+    height: 450px;
+    background-color: rgba(0,0,0,0.1);
+   
+}
+
+#nosotros-txt
+{
+	padding: 15px 20px 55px 20px;
+	background-color: #733742;
+}
+
+
+
+
+.info-perrito /* era thumbnail*/
+{
+	border: 0px !important;	
+	padding: 8px;
+	border-radius:4px;
+	background-color: #733742;/* #47a596;*/
+	margin-top: 12px;
+	margin-bottom: 12px; 
+	color: #f2e3e6;
+}
+
+.filtros
+{
+	padding: 35px 10px;
+	border-radius: 4px;
+	
+}
+
+
+#adopcion-cont
+{
+	margin-bottom: 50px !important;  /* no funciona??*/
+}
+
+.ayudanos-cont, .novedades-cont
+{
+	margin-top:25px;
+}
+
+.registrarVol-cont
+{
+	margin-bottom: 50px !important;
+	
+}
+
+
+#admin-cont
+{
+	margin-bottom: 40px;
+	background-color: #733742;
+	padding: 25px;
+	border-radius:4px;
+}
+
+
+#frmPagAct
+{
+	color: black !important;	
+}
+
+.anuncio
+{
+	background-color: #ff7560;
+	padding: 4px;
+	border-radius: 5px;
+}
+
+.entrada-cont
+{
+	background-color: rgba(0,0,0,0.2);
+	margin-left: 10px;
+	padding:10px;
+	margin-bottom:30px;
+	border-radius: 10px;
+}
+
+h5{
+	background-color: rgba(0,0,0,0.2);
+	padding: 4px;
+}
+
