@@ -1,0 +1,17 @@
+language: java
+jdk:
+  - oraclejdk8
+services:
+  - mysql
+before_install:
+ - mysql -u root --password="" -e 'CREATE DATABASE IF NOT EXISTS bd_sistema;'
+ - mysql -u root --password="" bd_sistema < bd/BD_VOLUNTARIADO_1.8.sql
+
+before_script:
+ - mysql -u root --password="" -e 'show databases;'
+ 
+after_failure:
+ - mysql -u root --password="" -e 'show databases;'
+ 
+after_success:
+- bash <(curl -s https://codecov.io/bash)
