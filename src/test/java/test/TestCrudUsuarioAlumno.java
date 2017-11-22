@@ -71,7 +71,7 @@ public class TestCrudUsuarioAlumno {
 		assertTrue(AlumnoRecu.toString().equals(alumno.toString()));
 	}
 	
-	/*
+	
 	@Test
 	public void testUsuarioAlumnoInsertado() {
 				
@@ -178,7 +178,7 @@ public class TestCrudUsuarioAlumno {
 		
 		
 	}
-	*/
+	
 	
 	
 
