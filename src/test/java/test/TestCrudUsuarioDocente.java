@@ -22,7 +22,7 @@ public class TestCrudUsuarioDocente {
 				assertTrue(true);
 			}
 			
-			/*
+			
 			
 
 			
@@ -156,5 +156,5 @@ public class TestCrudUsuarioDocente {
 				
 				
 			}
-*/
+
 }
