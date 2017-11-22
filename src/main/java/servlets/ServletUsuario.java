@@ -73,7 +73,7 @@ public class ServletUsuario extends HttpServlet {
 		
 		UsuarioDTO obj = servicio.iniciarSesion(xlogin);
 		
-		System.out.println(obj.getApellido());
+	
 		
 		if(obj!=null)//Si hay usuario
 		{
