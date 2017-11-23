@@ -10,6 +10,8 @@ before_install:
 before_script:
  - mysql -u root --password="" -e 'show databases;'
  
+script: "mvn cobertura:cobertura"
+ 
 after_failure:
  - mysql -u root --password="" -e 'show databases;'
  
