@@ -10,12 +10,7 @@ public class TestHabilitarUsuario {
 	
 	MySqlUsuarioDAO usuariodao = new MySqlUsuarioDAO();
 	
-	public void testtest()
-	{
-		assertTrue(true);
-	}
-	
-	
+		
 
 	@Test
 	public void deshabilitarUsuario() {
