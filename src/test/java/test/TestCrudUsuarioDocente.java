@@ -17,12 +17,6 @@ public class TestCrudUsuarioDocente {
 			MySqlDocenteDAO docenteser = new MySqlDocenteDAO();
 			MySqlUsuarioDAO usuarioser = new MySqlUsuarioDAO();
 			
-			public void testtest()
-			{
-				assertTrue(true);
-			}
-			
-			
 			
 
 			
