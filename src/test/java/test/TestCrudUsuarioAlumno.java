@@ -24,18 +24,11 @@ import service.UsuarioService;
 
 public class TestCrudUsuarioAlumno {
 	
-	AlumnoService alumnoser = new AlumnoService();
-	UsuarioService usuarioser = new UsuarioService();
 	
-	//MySqlAlumnoDAO alumnoser = new MySqlAlumnoDAO();
-	//MySqlUsuarioDAO usuarioser = new MySqlUsuarioDAO();
 	
-	@Test
-	public void testtest()
-	{
-		assertTrue(true);
-	}
-	
+	MySqlAlumnoDAO alumnoser = new MySqlAlumnoDAO();
+	MySqlUsuarioDAO usuarioser = new MySqlUsuarioDAO();
+
 	
 	
 	@Test
