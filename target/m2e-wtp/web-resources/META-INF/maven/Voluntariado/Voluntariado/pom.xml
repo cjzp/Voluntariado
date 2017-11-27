@@ -12,7 +12,8 @@
     <groupId>junit</groupId>
     <artifactId>junit</artifactId>
     <version>4.12</version>
-</dependency>
+	</dependency>
+
     
     
     <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-servlet-api -->
@@ -36,6 +37,13 @@
 		    <version>1.2</version>
 		</dependency>
 		
+			<!-- https://mvnrepository.com/artifact/taglibs/standard -->
+	<dependency>
+	    <groupId>taglibs</groupId>
+	    <artifactId>standard</artifactId>
+	    <version>1.1.2</version>
+	</dependency>
+		
 				
 <dependency>
     <groupId>javax.servlet</groupId>
@@ -49,7 +57,10 @@
     <version>2.2.1</version>
 </dependency>
 		
-    
+		
+	
+
+
     
   </dependencies>
   <build>
@@ -71,10 +82,23 @@
             <plugin>            
   <groupId>org.apache.maven.plugins</groupId>
   <artifactId>maven-war-plugin</artifactId>
+  <version>3.2.0</version>
   <configuration>
     <webXml>src\main\webapp\WEB-INF\web.xml</webXml>        
   </configuration>
 </plugin>
+	<plugin>
+		<groupId>org.codehaus.mojo</groupId>
+		<artifactId>cobertura-maven-plugin</artifactId>
+		<version>2.7</version>
+		<configuration>
+			<formats>
+				<format>html</format>
+				<format>xml</format>
+			</formats>
+			<check />
+		</configuration>
+	</plugin>
     </plugins>
   </build>
 </project>
