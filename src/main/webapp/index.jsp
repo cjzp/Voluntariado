@@ -19,14 +19,14 @@
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="#">Inicio</a></li>
-   		<li><a href="#">¿Quiénes somos?</a></li>
+   		<li><a href="#">Â¿QuiÃ©nes somos?</a></li>
          <li><a href="#">Haz voluntariado</a></li>
-         <li><a href="#">Comentarios</a></li>
-         <li><a href="#">Visión y Misión</a></li>
+         <li><a href="galeriaActividades.jsp">GalerÃ­a de Actividad</a></li>
+         <li><a href="#">VisiÃ³n y MisiÃ³n</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="#"><span class="glyphicon glyphicon-user"></span> Registrate</a></li>
-      <li><a href="login.jsp"><span class="glyphicon glyphicon-log-in"></span> Iniciar Sesión</a></li>
+      <li><a href="login.jsp"><span class="glyphicon glyphicon-log-in"></span> Iniciar SesiÃ³n</a></li>
     </ul>
   </div>
 </nav>
@@ -84,7 +84,7 @@ Comparte este portal:
 <div align="center">
 <p>
 <font color="white" size="2">
-Síguenos en facebook:
+SÃ­guenos en facebook:
 </font>
 </p>
 <iframe src="http://www.facebook.com/plugins/like.php?href=http://tuweb.com/&layout=button_count&show_faces=true&width=450&action=like&font=trebuchet+ms&colorscheme=light&height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px;" allowTransparency="true"></iframe>
