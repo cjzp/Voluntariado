@@ -21,6 +21,17 @@
   <li><a href="ServletActividad?tipo=listarVol">PARTICIPAR</a></li>
 </ul>
 <div class="container">
+
+	<%
+		String mensaje ="";
+		if(! (request.getAttribute("mensaje") == null))
+		{
+			 mensaje = (String) request.getAttribute("mensaje");
+			out.println(" <font color=\"red\" size=\"8\">" +mensaje+ "</font>" );
+		}
+		
+		
+	%>
   <h3>
   <font color="white" size="5">
   LISTA DE ACTIVIDADES

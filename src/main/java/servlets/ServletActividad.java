@@ -4,6 +4,9 @@ import java.io.IOException;
 import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -168,7 +171,27 @@ public class ServletActividad extends HttpServlet {
 	
 	private void listarVol(HttpServletRequest request, HttpServletResponse response) 
 	{
-		request.setAttribute("data", serviActividad.listaActividadVolu());
+		ArrayList<ActividadDTO> data = (ArrayList<ActividadDTO>) serviActividad.listaActividadVolu();
+		request.setAttribute("data", data);
+		
+		/*
+		ArrayList<Integer> vacantes = new ArrayList<Integer>();
+		for( ActividadDTO act:data)
+				vacantes.add(act.getVacantesMax()-serviActividad.alumnosAnotados(act.getCodigo()));
+		*/
+		
+		Map<ActividadDTO,Integer> mapa = new HashMap<ActividadDTO, Integer>();
+				
+		for( ActividadDTO act:data)
+		{
+
+			mapa.put(act,(act.getVacantesMax()-serviActividad.alumnosAnotados(act.getCodigo())));
+	
+		}
+		
+		
+		
+		request.setAttribute("mapa", mapa);
 		{
 			try{
 				request.getRequestDispatcher("registrarVoluntariado.jsp").forward(request, response);

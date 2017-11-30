@@ -5,8 +5,10 @@
 <%@page import="java.io.*,java.util.*,java.sql.*" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,18 +17,19 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <title>Voluntariado</title>
 </head>
-<body>
+
 <jsp:include page="menuAlumno.jsp"/>
+
+ <body>  
+
 <ul class="pager">
   <li><a href="ServletActividad?tipo=listarActividadVol">VER ACTIVIDADES</a></li>
 </ul>
-<sql:setDataSource driver="com.mysql.jdbc.Driver"
-					   url="jdbc:mysql://localhost:3306/bd_sistema"
-					   var="localSource"
-					   user="root"
-					   password="admin123"/>
-	<sql:query var="ejemplos" dataSource="${localSource}" sql="select * from tb_actividad where cod_estado = 1"></sql:query>
+
+
 <div class="container" style="width:450px">
+
+
 	<form action="ServletVoluntariado?tipo=registrar" id="formulario" method="post">	
   <p>
   <font color="white" size="3">
@@ -46,8 +49,18 @@
 		else{
 			valores = (String)session.getAttribute("usuario");
 		}
+		
+	/*
+			ArrayList<?> acts = (ArrayList<?>)request.getAttribute("data");
+			ActividadDTO act = (ActividadDTO) acts.get(0);*/
+			ArrayList<ActividadDTO> acts = (ArrayList<ActividadDTO>)request.getAttribute("data");
+	
+			Map<ActividadDTO,Integer> mapa = (Map<ActividadDTO,Integer>) request.getAttribute("mapa");
+			
+					
+		
 	%>
-      <input type="text" name="txt_alumno" class="form-control" id="text" class="required" value=<%=valores %>>
+      <input type="text" name="txt_alumno" class="form-control required" id="text" value=<%=valores %>>
     </div>
     <div class="form-group">
       <label for="sel1">
@@ -55,16 +68,52 @@
       Actividad a participar:
       </font>
       </label>
-      <select name="cbo_actividad"class="form-control" id="sel1">
+      <select name="cbo_actividad" class="form-control" id="sel1">
       <option selected> Seleccionar actividad</option>
-        <c:forEach var="ejemplo" begin="0" items="${ejemplos.rows}">
-							<option value="${ejemplo.cod_act}">${ejemplo.nom_act}</option>
-						</c:forEach>
+      
+      
+			
+      <% 
+      if(acts!=null)
+      {    	 
+      	for(ActividadDTO act : acts) 
+      	{
+          	  out.println("<option value='" + act.getCodigo()  +"'>" +act.getNombre() + "     vacantes: "+ mapa.get(act)+    "</option>");
+      		
+      	}
+      	
+      }
+      %>
+    
       </select>
+        
+  
+      <br>
+      
+      <!--
+      <select disabled class="form-control" id="vac">
+      <option selected> Vacantes</option>      
+			
+      <% 
+      /*
+      if(!mapa.isEmpty())
+      {    	 
+      	for(ActividadDTO act : acts) 
+      	{
+          	  out.println("<option value='" + mapa.get(act) +"'>" + mapa.get(act)  + "</option>");
+      		
+      	}
+      	
+      }*/
+      %>
+    
+      </select>
+      -->
+    
     </div> 
     <button type="submit"  class="btn btn-primary">REGISTRARME</button>
     <input type="button" value="CANCELAR" class="btn btn-primary" 
-			onclick="location.href='http://localhost:8080/Proyecto_Voluntariado/menuAlumno.jsp'"/>
+			onclick="location.href='http://localhost:8080/Voluntariado/menuAlumno.jsp'"/>
   </form>
 </div>
 <br>
@@ -112,6 +161,8 @@
         DOCENTE ENCARGADO
         </font>
         </th>
+        
+    
       </tr>
     </thead>
 			<%
@@ -128,13 +179,42 @@
 					out.println("<td>"+xDoc.getFecha()+"</td>");
 					out.println("<td>"+xDoc.getHoraInicio()+"</td>");
 					out.println("<td>"+xDoc.getHoraFin()+"</td>");
-					out.println("<td>"+xDoc.getNom_usuario()+"</td>");	
+					out.println("<td>"+xDoc.getNom_usuario()+"</td>");					
 					out.println("</tr>");
-					out.println("</tbody>");
+					//out.println("</tbody>");
 				}
 			}
 			%>
+			
 			</table>
 	</div>
+		<!-- 
+	<script>
+			
+
+			jQuery.noConflict();
+			
+			jQuery(document).ready(function(){
+			    
+							
+				jQuery("#sel1").change(function(){
+					var n = jQuery(".index").text();
+					
+					  jQuery("#vacantes").text(n);
+					
+				});
+				
+			});
+			
+				
+			
+			</script>
+	
+			-->
+			
+	
 </body>
+
+
+
 </html>

@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
  <%@page import="java.util.ArrayList"%>
 <%@ page import="beans.VoluntariadoDTO"%>
+<%@ page import="beans.ActividadDTO"%>
 <%@page import="java.io.*,java.util.*,java.sql.*" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
@@ -20,12 +21,7 @@
 <ul class="pager">
   <li><a href="menuAlumno.jsp">«« Atrás</a></li>
 </ul>
-<sql:setDataSource driver="com.mysql.jdbc.Driver"
-					   url="jdbc:mysql://localhost:3306/bd_sistema"
-					   var="localSource"
-					   user="root"
-					   password="admin123"/>
-	<sql:query var="ejemplos" dataSource="${localSource}" sql="select * from tb_actividad"></sql:query>
+
 <div class="container">
 	<form action="ServletVoluntariado?tipo=porActividadVol" method="post" class="form-inline">
     <div class="form-group">
@@ -42,9 +38,21 @@
       <br>
       <select name="cbo_actividad"class="form-control" id="sel1">
       <option selected> -- Seleccionar actividad --</option>
-						<c:forEach var="ejemplo" begin="0" items="${ejemplos.rows}">
-							<option value="${ejemplo.nom_act}">${ejemplo.nom_act}</option>
-						</c:forEach>
+								
+      <% 
+      
+      ArrayList<ActividadDTO> acts=(ArrayList<ActividadDTO>) request.getAttribute("acts");
+      
+      if(acts!=null)
+      {    	 
+      	for(ActividadDTO act : acts) 
+      	{
+          	  out.println("<option value='" + act.getNombre() +"'>" +act.getNombre() +    "</option>");
+      		
+      	}
+      	
+      }
+      %>
       </select>
     <button type="submit" class="btn btn-info">
       <span class="glyphicon glyphicon-search"></span>Buscar

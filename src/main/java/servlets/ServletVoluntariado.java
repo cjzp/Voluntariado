@@ -2,6 +2,8 @@ package servlets;
 
 import java.io.IOException;
 import java.text.ParseException;
+import java.util.Calendar;
+import java.sql.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,7 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
+import beans.ActividadDTO;
 import beans.VoluntariadoDTO;
 import service.ActividadService;
 import service.AlumnoService;
@@ -316,6 +318,7 @@ public class ServletVoluntariado extends HttpServlet {
 	private void listar(HttpServletRequest request, HttpServletResponse response) 
 	{
 		request.setAttribute("data", serviVoluntariado.listaVoluntariado());
+		request.setAttribute("acts", serviActividad.listaActividad());
 		{
 			try{
 				request.getRequestDispatcher("listarVoluntarios.jsp").forward(request, response);
@@ -347,21 +350,88 @@ public class ServletVoluntariado extends HttpServlet {
 
 	private void registrar(HttpServletRequest request, HttpServletResponse response) throws ParseException 
 	{
-		
-		
-		
-		int actividad;
-		
+				
+		int actividad;		
 			
 		String alumno = request.getParameter("txt_alumno");	
 		actividad = Integer.parseInt(request.getParameter("cbo_actividad"));
 		
 		String asistencia = request.getParameter("r_asistencia");
 		String justificacion = request.getParameter("txt_justificacion");
+		//asist y just ya no estan?
 		
-		//int nparticipantes = serviActividad.alumnosAnotados(actividad);
-		//if(nparticipantes == )
+		ActividadDTO act = serviActividad.buscaActividad(actividad);
+		
+		int nparticipantes = serviActividad.alumnosAnotados(actividad);
+		int max = act.getVacantesMax();
+				
+		
+		boolean fail = false;
+		
+		if(max-nparticipantes < 1)
+		{
+			fail = true;			
+			request.setAttribute("mensaje","Actividad alcanzó máximo de vacantes");
+		
+		}
+		else			
+		{
+			int min = act.getVacantesMin();
+			
+			if(nparticipantes < min)
+			{			
+				//toda la verificacion hacerla al inicio?
+				
+				java.sql.Date ahora = new Date(Calendar.getInstance().getTimeInMillis());
+				java.sql.Date fecha = act.getFecha();
+				
+				String a_fecha, m_fecha, d_fecha, a_ahora,m_ahora,d_ahora;
+				a_ahora= ahora.toString().substring(0,4);
+				m_ahora= ahora.toString().substring(5,7);
+				d_ahora = ahora.toString().substring(8,10);
+				
+				a_fecha= fecha.toString().substring(0,4);
+				m_fecha= fecha.toString().substring(5,7);
+				d_fecha = fecha.toString().substring(8,10);
+				
+				if(  Integer.parseInt(a_fecha) != Integer.parseInt(a_ahora))
+				{
+					request.setAttribute("mensaje","El año de la actividad no es actual");
+					fail = true;
+				}
+				else if(Integer.parseInt(m_fecha) < Integer.parseInt(m_ahora))
+				{
+					request.setAttribute("mensaje","Fecha de actividad vencida");
+					fail = true;
+				}
+				else if(Integer.parseInt(d_fecha) < Integer.parseInt(d_ahora)-2)//faltando 3 dias?
+				{
+					request.setAttribute("mensaje","Fecha de actividad vencida");
+					fail = true;
+				}
+						
+				
+				
+				//System.out.println(" FECHAS :" ahora + fecha);
+			}
+		}
+			
+			if(fail)
+			{				
+				serviActividad.cambiarEstado(actividad, 3); //inhabilitar actividad
+				try {
+					request.getRequestDispatcher("actividadesVoluntariado.jsp").forward(request, response);
+				} catch (ServletException e) {
+					
+					e.printStackTrace();
+				} catch (IOException e) {
+					
+					e.printStackTrace();
+				}
+			}
+		else{ //else necesario?
 	
+			
 		VoluntariadoDTO obj =new VoluntariadoDTO();
 		
 			obj.setCodigoAlumno(alumno);
@@ -377,6 +447,10 @@ public class ServletVoluntariado extends HttpServlet {
 						
 			serviAlumno.anotarActividad(alumno, actividad);
 			listar(request, response);
+		}
+			
 	}
 
 }
+
+
