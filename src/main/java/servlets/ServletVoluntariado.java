@@ -399,14 +399,14 @@ public class ServletVoluntariado extends HttpServlet {
 					request.setAttribute("mensaje","El año de la actividad no es actual");
 					fail = true;
 				}
-				else if(Integer.parseInt(m_fecha) < Integer.parseInt(m_ahora))
+				if(!fail && Integer.parseInt(m_fecha) < Integer.parseInt(m_ahora))
 				{
-					request.setAttribute("mensaje","Fecha de actividad vencida");
+					request.setAttribute("mensaje","Mes de la actividad vencido");
 					fail = true;
 				}
-				else if(Integer.parseInt(d_fecha) < Integer.parseInt(d_ahora)-2)//faltando 3 dias?
+				if(!fail && Integer.parseInt(d_fecha) -2 < Integer.parseInt(d_ahora))//faltando 3 dias?
 				{
-					request.setAttribute("mensaje","Fecha de actividad vencida");
+					request.setAttribute("mensaje","Día de la actividad vencida");
 					fail = true;
 				}
 						
