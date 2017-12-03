@@ -86,7 +86,7 @@ public class ServletUsuario extends HttpServlet {
 				
 				if (obj.getLogin().substring(0, 1).equals("p"))
 				{
-				request.getRequestDispatcher("menuDocente.jsp").forward(request, response);
+					request.getRequestDispatcher("menuDocente.jsp").forward(request, response);
 				}
 				else if (obj.getLogin().substring(0, 2).equals("i2"))
 				{
@@ -99,7 +99,7 @@ public class ServletUsuario extends HttpServlet {
 				
 				
 			}else{
-				request.setAttribute("msg", "ContraseÃ±a incorrecta...");
+				request.setAttribute("msg", "Contraseña incorrecta..."); //ñ muere?
 				request.getRequestDispatcher("login.jsp").forward(request, response);
 			}
 		}else{

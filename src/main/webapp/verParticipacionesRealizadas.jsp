@@ -40,7 +40,8 @@
 			valores = (String)session.getAttribute("usuario");
 		}
 	%>
-      <input type="text" name="txt_codigo" class="form-control" id="text" class="required" value=<%=valores %>>
+      <input disabled type="text" name="txt_cod" class="form-control" id="txt" value=<%=valores %>>
+      <input type="hidden" name="txt_codigo" class="form-control" id="text" class="required" value=<%=valores %>>	
     <button type="submit" class="btn btn-info">
       <span class="glyphicon glyphicon-search"></span> Ver Actividades
     </button>
@@ -72,11 +73,12 @@
         HORAS REALIZADAS
         </font>
         </th>
+        <!-- 
         <th colspan="2">
         <font color="white" size="2">
         ACCIONES
         </font>
-        </th>
+        </th> -->
       </tr>
     </thead>
 			<%

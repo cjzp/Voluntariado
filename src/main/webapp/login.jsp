@@ -88,7 +88,12 @@
     </div>
     <p>
     <font color="red" size="2">
-				${requestScope.msg}
+				<% if( request.getAttribute("msg") != null)
+					{
+						String mensaje = (String) request.getAttribute("msg");
+						out.println(mensaje);
+					}
+				%>
 	</font>
 	</p>
     <div class="checkbox">
