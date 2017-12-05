@@ -19,13 +19,11 @@
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="#">Inicio</a></li>
-   		<li><a href="#">¿Quiénes somos?</a></li>
+   		<li><a href="menu1.jsp">¿Quiénes somos?</a></li>
          <li><a href="#">Haz voluntariado</a></li>
-         <li><a href="#">Comentarios</a></li>
-         <li><a href="#">Visión y Misión</a></li>
+         
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Registrate</a></li>
       <li><a href="login.jsp"><span class="glyphicon glyphicon-log-in"></span> Iniciar Sesión</a></li>
     </ul>
   </div>

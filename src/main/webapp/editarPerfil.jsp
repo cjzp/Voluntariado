@@ -19,10 +19,9 @@
 			    </div>
 			    <ul class="nav navbar-nav">
 			      	<li><a href="index.jsp">Inicio</a></li>
-			   		<li><a href="#">¿Quiénes somos?</a></li>
+			   		<li><a href="menu1.jsp">¿Quiénes somos?</a></li>
 			        <li><a href="#">Haz voluntariado</a></li>
-			        <li><a href="#">Comentarios</a></li>
-			        <li><a href="#">Visión y Misión</a></li>
+
 			    </ul>	
 			  </div>
 		</nav>

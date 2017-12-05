@@ -58,7 +58,7 @@
     </div> 
     <button type="submit" class="btn btn-primary">GUARDAR</button>
     <input type="button" value="CANCELAR" class="btn btn-primary" 
-			onclick="location.href='http://localhost:8080/Proyecto_Voluntariado/ServletVoluntariado?tipo=porAlumno'"/>
+			onclick="location.href='http://localhost:8080/Voluntariado/ServletVoluntariado?tipo=porAlumno'"/>
   </form>
   </div>
 </body>

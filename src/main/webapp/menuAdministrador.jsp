@@ -10,7 +10,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <title>Menu Administrador</title>
 </head>
-<body background="img/DSC_2296.JPG">
+<body background="img/DSC_2297.jpg">
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -20,7 +20,7 @@
       <li class="active"><a href="menuAdministrador.jsp">Inicio</a></li>
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Instituciones <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="registrarInstitucion.jsp">Registrar InstituciÃ³n</a></li>
+          <li><a href="registrarInstitucion.jsp">Registrar Institución</a></li>
           <li><a href="ServletInstitucion?tipo=listarIns">Lista de Instituciones</a></li>
         </ul>
       </li>
@@ -37,7 +37,7 @@
         </ul>
       </li>  
 	    <!-- DANTE -->
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Comentarios y CalificaciÃ³n <span class="caret"></span></a>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Comentarios y Calificación <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="ServletInstitucion?tipo=insNombres">Registrar</a></li>
           <li><a href="ServletInstitucion?tipo=reporteComentarios">Ver Reporte</a></li>
@@ -58,7 +58,7 @@
       <%=valores %>
       </font>
       </a></li>
-      <li><a href="ServletUsuario?tipo=cerrarSesion"><span class="glyphicon glyphicon-log-in"></span> Cerrar SesiÃ³n</a></li>
+      <li><a href="ServletUsuario?tipo=cerrarSesion"><span class="glyphicon glyphicon-log-in"></span> Cerrar Sesión</a></li>
     </ul>
   </div>
 </nav>

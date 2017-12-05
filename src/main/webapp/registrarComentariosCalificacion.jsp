@@ -48,7 +48,7 @@
     
     <button type="submit" class="btn btn-primary">REGISTRAR</button>
     <input type="button" value="CANCELAR" class="btn btn-primary" 
-			onclick="location.href='http://localhost:8080/Proyecto_Voluntariado/ServletInstitucion?tipo=insNombres'"/>
+			onclick="location.href='http://localhost:8080/Voluntariado/ServletInstitucion?tipo=insNombres'"/>
   </form>
 </div>		
 </body>
