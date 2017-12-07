@@ -24,8 +24,8 @@ public class MySqlActividadDAO implements ActividadDAO
 		try {
 			cn= new MySqlDBConexion().getConexion();
 			String sql="INSERT INTO tb_actividad values(null,?,?,?,?,?,?,?,?,?,?,?)";
-			pstm=cn.prepareStatement(sql);
-			pstm.setInt(1, obj.getCod_institucion()); 
+			pstm=cn.prepareStatement(sql);			
+			pstm.setInt(1,obj.getCod_institucion()); 
 			pstm.setString(2, obj.getNombre());
 			pstm.setString(3, obj.getDescripcion());
 			pstm.setDate(4, obj.getFecha());
@@ -130,6 +130,7 @@ public class MySqlActividadDAO implements ActividadDAO
 				}
 				return data;
 	}
+	
 
 	@Override
 	public ActividadDTO buscarActividad(int cod) 
@@ -149,14 +150,17 @@ public class MySqlActividadDAO implements ActividadDAO
 			{
 				obj = new ActividadDTO();
 				obj.setCodigo(rs.getInt(1));
-				obj.setNom_institucion(rs.getString(2));
+				//obj.setNom_institucion(rs.getString(2)); //??
+				obj.setCod_institucion(rs.getInt(2));
 				obj.setNombre(rs.getString(3));
 				obj.setDescripcion(rs.getString(4));
 				obj.setFecha(rs.getDate(5));
 				obj.setHoraInicio(rs.getString(6));
 				obj.setHoraFin(rs.getString(7));
-				obj.setNom_usuario(rs.getString(8));
-				obj.setNombreEstado(rs.getString(9));
+				obj.setCod_docente(rs.getString(8));
+				//obj.setNom_usuario(rs.getString(8)); //??				
+				obj.setCodEstado(rs.getInt(9));
+				//obj.setNombreEstado(rs.getString(9)); //??
 				obj.setMotivoEstado(rs.getString(10));
 				
 				obj.setVacantesMax(rs.getInt(11));

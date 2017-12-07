@@ -6,8 +6,7 @@ import org.junit.Test;
 
 import beans.*;
 import dao.*;
-import service.AlumnoService;
-import service.UsuarioService;
+
 
 /*
  * ('1','Computacion e Informatica'),
