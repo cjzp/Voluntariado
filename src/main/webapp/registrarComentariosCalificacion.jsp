@@ -21,12 +21,12 @@
 	<input type="hidden" name="txt_cod" value="${requestScope.Institucion.codigo}">
   	<h2>
   	<font color="white" size="5">
-  	REGISTRAR CALIFICACION INSTITUCIÃ“N
+  	REGISTRAR CALIFICACION INSTITUCIÓN
   	</font>
   	</h2>
   <p>
   <font color="white" size="2">
-  Llenar el formulario a continuaciÃ³n:
+  Llenar el formulario a continuación:
   </font>
   </p>
   <div class="form-group">

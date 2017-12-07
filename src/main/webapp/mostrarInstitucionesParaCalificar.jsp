@@ -27,16 +27,17 @@
   <table class="table table-bordered">
     <thead>
       <tr bgcolor='#111010'>
-        <th>
-        <font color="white" size="2">
-        INSTITUCIÓN
-        </font>
-        </th>
-        <th colspan="1">
-        <font color="white" size="1">
-        ACCIONES
-        </font>
-        </th>
+        <td align='center'>
+	        <font color="white" size="2" >
+	        	INSTITUCIÓN
+	        </font>
+        </td>
+        
+        <td align='center'> 
+	        <font color="white" size="2">
+	        	ACCIONES
+	        </font>
+        </td>
       </tr>
     </thead>
 			<%
