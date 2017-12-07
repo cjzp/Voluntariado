@@ -20,7 +20,7 @@
     <ul class="nav navbar-nav">
       <li><a href="index.jsp">Inicio</a></li>
    		<li><a href="menu1.jsp">¿Quiénes somos?</a></li>
-         <li><a href="#">Haz voluntariado</a></li>
+         <li><a href="#">Nuestro voluntariado</a></li>
          
     </ul>
     <ul class="nav navbar-nav navbar-right">
