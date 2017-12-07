@@ -9,6 +9,12 @@ public class InstitucionDTO
 	private String telefono;
 	
 	private String comentarios;
+	public String getComentarios() {
+		return comentarios;
+	}
+	public void setComentarios(String comentarios) {
+		this.comentarios = comentarios;
+	}
 	private int calificacion;
 	
 	public int getCalificacion() {
@@ -48,4 +54,13 @@ public class InstitucionDTO
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
+	@Override
+	public String toString() {
+		return "InstitucionDTO [codigo=" + codigo + ", nombre=" + nombre + ", caracteristicas=" + caracteristicas
+				+ ", direccion=" + direccion + ", telefono=" + telefono + ", comentarios=" + comentarios
+				+ ", calificacion=" + calificacion + "]";
+	}
+	
+	
+	
 }
