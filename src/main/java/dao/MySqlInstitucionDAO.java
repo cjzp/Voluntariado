@@ -160,7 +160,9 @@ public class MySqlInstitucionDAO implements InstitucionDAO
 				obj.setNombre(rs.getString(2));
 				obj.setCaracteristicas(rs.getString(3));
 				obj.setDireccion(rs.getString(4));
-				obj.setTelefono(rs.getString(5));		
+				obj.setTelefono(rs.getString(5));
+				obj.setComentarios(rs.getString(6));
+				obj.setCalificacion(rs.getInt(7));
 			}
 			
 		}catch(SQLException ex)
@@ -190,13 +192,19 @@ public class MySqlInstitucionDAO implements InstitucionDAO
 		PreparedStatement pstm=null;
 		try {
 			cn= new MySqlDBConexion().getConexion();
-			String sql="INSERT INTO tb_institucion values(null,?,?,?,?)";
+			String sql="INSERT INTO tb_institucion values(null,?,?,?,?,?,?)";
 			pstm=cn.prepareStatement(sql);
 			pstm.setString(1, obj.getNombre());
 			pstm.setString(2, obj.getCaracteristicas());
 			pstm.setString(3, obj.getDireccion());
 			pstm.setString(4, obj.getTelefono());
+			pstm.setString(5, obj.getComentarios()); 
+			pstm.setInt(6, obj.getCalificacion());
 			estado=pstm.executeUpdate();
+			
+			
+			
+			
 		} catch (Exception e) 
 		{
 			e.printStackTrace();

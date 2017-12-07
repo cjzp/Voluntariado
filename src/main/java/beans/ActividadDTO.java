@@ -111,6 +111,17 @@ public class ActividadDTO
 	public void setVacantesMax(int vacantesMax) {
 		this.vacantesMax = vacantesMax;
 	}
+	@Override
+	public String toString() {
+		return "ActividadDTO [codigo=" + codigo + ", cod_institucion=" + cod_institucion + ", nombre=" + nombre
+				+ ", nom_institucion=" + nom_institucion + ", descripcion=" + descripcion + ", fecha=" + fecha
+				+ ", horaInicio=" + horaInicio + ", horaFin=" + horaFin + ", cod_docente=" + cod_docente
+				+ ", nom_usuario=" + nom_usuario + ", codEstado=" + codEstado + ", nombreEstado=" + nombreEstado
+				+ ", motivoEstado=" + motivoEstado + ", vacantesMin=" + vacantesMin + ", vacantesMax=" + vacantesMax
+				+ "]";
+	}
+	
+	
 	
 	
 }
